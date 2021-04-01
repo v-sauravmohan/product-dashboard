@@ -1,0 +1,364 @@
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900";
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #43425D;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-logo {
+    padding: 20px;
+    background: #36354b;
+    height: 70px;
+}
+
+#sidebar .sidebar-logo .header {
+    padding-top: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li {
+    margin: 7px 0;
+}
+
+#sidebar ul li a {
+    padding: 10px 0px 10px 20px;
+    font-size: 1.1em;
+    display: block;
+    color: rgba(255, 255, 255, 0.658);
+}
+
+#sidebar ul li a span.sidebar-item {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+
+#sidebar ul li a:hover {
+    color: rgb(255, 255, 255)
+}
+
+#sidebar ul li.active>a {
+    color: #fff;
+    background: #36354b;
+    border-left: 5px solid #A3A0FB;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#content .navbar {
+    padding: 0px;
+    height: 70px;
+    background-color: #36354b;
+}
+
+#content .sidebar-button {
+    padding-left: 20px;
+}
+
+#content .container-fluid {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px 0 0 0;
+}
+
+#searchBar {
+    padding: 0 50px
+}
+
+#searchBar .input-box {
+    border: none;
+    padding-left: 10px;
+    width: 300px;
+}
+
+#searchBar .input-box:focus {
+    outline: none;
+}
+
+#content .vl {
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#content .fa-chevron-down {
+    margin-left: 10px;
+}
+
+#content .rounded-circle {
+    height: 40px;
+    width: 40px;
+    margin: 0px 15px;
+}
+
+/* -------------------------------------------------------
+    DASHBOARD STYLE
+-------------------------------------------------------- */
+
+#dashboard {
+    padding: 10px 100px;
+}
+
+#dashboard .add-button {
+    background-color: #6763E3;
+    color: rgba(255, 255, 255, 0.658);
+}
+
+#dashboard .add-button:hover {
+    color: #fff;
+}
+
+#dashboard .add-button .label {
+    padding-right: 25px;
+}
+
+#dashboard .add-button .icon {
+    background-color: #302CB0;
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+#dashboard .card {
+    width: 100%;
+    border: none;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+#dashboard .col-width-l {
+    width: 75vw;
+}
+
+#dashboard .col-width-s {
+    width: 20vw;
+}
+
+#dashboard .row {
+    padding-bottom: 35px;
+}
+
+#dashboard #cards .col {
+    padding-right: 25px;
+}
+
+#dashboard #cards .card-size-l {
+    height: 70vh;
+}
+
+#dashboard #cards .card-size-m {
+    height: 50vh;
+}
+
+#dashboard #cards .card-size-s {
+    height: 30vh;
+}
+
+#dashboard #statistics .card-body .dropdown-toggle {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------
+        PROFILE SECTION
+------------------------------------------------------ */
+#profile .current-user {
+    padding-top: 20px;
+}
+
+#profile .current-user .rounded-circle {
+    width: 120px;
+    height: 120px;
+}
+
+#profile .current-user .name {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#profile .current-user .country {
+    font-size: 15px;
+}
+
+#profile .social-icons-group {
+    width: 100%;
+    padding: 0 10% 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #CECFD0;
+}
+
+#profile .social-icons-group .icon {
+    color: #CECFD0
+}
+
+#profile .card-body .fa-ellipsis-h {
+    height: 25px;
+    width: auto;
+    color: #CECFD0;
+}
+
+#profile .card-body .header {
+    padding-bottom: 15px;
+}
+
+#profile .user-group .user .details {
+    margin-top: 10px;
+}
+
+#profile .user-group .user .rounded-circle {
+    height: 70px;
+    width: 70px;
+}
+
+#profile .user-group .user .name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#profile .user-group .user .country, .phone-number {
+    font-size: 15px;
+}
+
+#profile .user-group .user .phone-number {
+    padding-left: 15px;
+}
+
+/* -------------------------------------------------
+    PRODUCT VIDEO SECTION
+---------------------------------------------------- */
+
+#productVideo .card-body .fa-ellipsis-h {
+    height: 25px;
+    width: auto;
+    color: #CECFD0;
+}
+
+#productVideo .card-body .video-player {
+    padding-top: 15px;
+    width: 100%;
+    height: 80%;
+    margin-bottom: 10px;
+
+}
+
+/* ==================================================
+    CHARTS AND TABLES
+ =====================================================*/
+#lineChart {
+    overflow: hidden;
+}
+ 
+#doughnutChart {
+    overflow: hidden;
+}
+
+#referrerTable .card-body .table {
+    margin-top: 15px;
+    width: 95%;
+    height: auto;
+}
+
+#referrerTable .card-body .table thead {
+    background-color: #F5F6FA;
+    color: #A3A6B4;
+    border: none;
+}
+
+#referrerTable .card-body .btn {
+    background-color: white;
+    color: #3B86FF;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

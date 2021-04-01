@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Mitsogo | Dashboard</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/b58f20cad7.js" crossorigin="anonymous"></script>
+
+  <!--Charts.js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-logo align-self-center">
+        <h3 class="header">IMPEKABLE</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li>
+          <a href="#">
+            <i class="fa fa-home"></i>
+            <span class="sidebar-item">Home</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#">
+            <i class="fa fa-chart-bar"></i>
+            <span class="sidebar-item">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-inbox"></i>
+            <span class="sidebar-item">Inbox</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="sidebar-item">Products</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center">
+          <span id="sidebarCollapse" class="sidebar-button">
+            <i class="fas fa-align-left"></i>
+          </span>
+          <div id="searchBar">
+            <i class="fa fa-search"></i>
+            <input type="text" class="input-box" placeholder="Search transactions, invoices or help">
+          </div>
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto d-flex align-items-center">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="fa fa-bell"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <span class="vl">|</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span>Jana Navakova</span>
+                  <i class="fa fa-chevron-down"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <img src="./files/Jana Navakova.jpg" class="rounded-circle" alt="Profile Picture">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="dashboard">
+        <!--Dashboard Header-->
+        <div class="row">
+          <h2 class="col">Overview</h2>
+          <div class="col d-flex justify-content-end">
+            <button type="button" class="d-flex align-items-center btn add-button">
+              <span class="label">Add Funds</span>
+              <i class="fa fa-plus icon"></i>
+            </button>
+          </div>
+        </div>
+        <!--Cards-->
+        <div id="cards" class="row">
+          <!--Statistics Section-->
+          <div class="col col-width-l">
+            <div class="row">
+              <!--Statistics Card-->
+              <div id="statistics" class="col">
+                <div class="card card-size-m">
+                  <div class="card-body">
+                    <div class="row">
+                      <h5 class="col card-title">Statistcs</h5>
+                      <div class="col dropdown d-flex justify-content-end">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                          Last 6 months
+                        </button>
+                        <div class="dropdown-menu">
+                          <button class="dropdown-item" type="button">Last 3 years</button>
+                          <button class="dropdown-item" type="button">Last month</button>
+                          <button class="dropdown-item" type="button">Yesterday</button>
+                        </div>
+                      </div>
+                    </div>
+                    <canvas id="lineChart" height="350" width="450"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!--Sales Distribution Card-->
+              <div class="col">
+                <div class="card card-size-m">
+                  <div class="card-body">
+                    <h5 class="card-title">Sales Distribution</h5>
+                    <canvas id="doughnutChart" height="370" width="450"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Refferrer Card-->
+            <div id="referrerTable" class="row">
+              <div class="col">
+                <div class="card card-size-m">
+                  <div class="card-body">
+                    <h5 class="card-title">Referrer</h5>
+                    <div class="d-flex justify-content-center">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">LOCATION</th>
+                            <th scope="col">VIEWS</th>
+                            <th scope="col">SALES</th>
+                            <th scope="col">CONVERSION</th>
+                            <th scope="col">TOTAL</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">google.com</th>
+                            <td>3746</td>
+                            <td>752</td>
+                            <td>43%</td>
+                            <td>$19,291</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">facebook.com</th>
+                            <td>3746</td>
+                            <td>752</td>
+                            <td>43%</td>
+                            <td>$19,291</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">twitter.com</th>
+                            <td>3746</td>
+                            <td>752</td>
+                            <td>43%</td>
+                            <td>$19,291</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Direct, email, IM</th>
+                            <td>3746</td>
+                            <td>752</td>
+                            <td>43%</td>
+                            <td>$19,291</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">linkedin.com</th>
+                            <td>3746</td>
+                            <td>752</td>
+                            <td>43%</td>
+                            <td>$19,291</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <button type="button" class="btn">Show more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Profile Section-->
+          <div class="col-md-auto col-width-s">
+            <!--Profile & Our Users Card-->
+            <div id="profile" class="row">
+              <div class="card card-size-l">
+                <div class="card-body">
+                  <div class="d-flex flex-row justify-content-center current-user">
+                    <div class="d-flex flex-column">
+                      <img src="./files/Jana Navakova.jpg" class="rounded-circle" alt="Profile Picture">
+                      <h5 class="name">Nick herasimenka</h5>
+                      <p class="country" style="text-align: center;">United States</p>
+                    </div>
+                  </div>
+                  <div class="social-icons-group">
+                    <div class="d-flex justify-content-between">
+                      <i class="icon fab fa-instagram"></i>
+                      <i class="icon fab fa-twitter"></i>
+                      <i class="icon fab fa-facebook"></i>
+                      <i class="icon fas fa-envelope-square"></i>
+                    </div>
+                  </div>
+                  <div class="header d-flex flex-row justify-content-between">
+                    <h5 class="card-title">Our Users</h5>
+                    <i class="fa fa-ellipsis-h"></i> 
+                  </div>
+                  <div class="user-group">
+                    <div class="d-flex flex-column">
+                      <div class="user d-flex flex-row">
+                        <img src="./files/Drew James.png" class="rounded-circle" alt="Profile Picture">
+                        <div class="details d-flex flex-column">
+                          <h5 class="name">Drew James</h5>
+                          <div class="d-flex flex-row">
+                            <p class="country">United States</p>
+                            <p class="phone-number">Mobile: 871.567.4877</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="user d-flex flex-row">
+                        <img src="./files/Bavid kames.png" class="rounded-circle" alt="Profile Picture">
+                        <div class="details d-flex flex-column">
+                          <h5 class="name">Bavid Kames</h5>
+                          <div class="d-flex flex-row">
+                            <p class="country">United States</p>
+                            <p class="phone-number">Mobile: 871.567.4877</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="user d-flex flex-row">
+                        <img src="./files/Lavid Emes.png" class="rounded-circle" alt="Profile Picture">
+                        <div class="details d-flex flex-column">
+                          <h5 class="name">Lavid Emes</h5>
+                          <div class="d-flex flex-row">
+                            <p class="country">United States</p>
+                            <p class="phone-number">Mobile: 871.567.4877</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Product Video Card-->
+            <div id="productVideo" class="row">
+              <div class="card card-size-s">
+                <div class="card-body">
+                  <div class="header d-flex flex-row justify-content-between">
+                    <h5 class="card-title">Product Video</h5>
+                    <i class="fa fa-ellipsis-h"></i> 
+                  </div>
+                  <iframe class="video-player" src="https://www.youtube.com/embed/Oy6hk6Y7VHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+
+  <!--Custom Code-->
+  <script type="text/javascript" src="./index.js">
+    
+  </script>
+</body>
+
+</html>
