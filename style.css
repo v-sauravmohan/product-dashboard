@@ -197,6 +197,7 @@ a:focus {
   width: 100%;
   border: none;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 #dashboard .row {
@@ -318,20 +319,12 @@ a:focus {
   width: 20vw;
 }
 
-#lineChart {
-  overflow: hidden;
-}
-
 #salesDist .card-body .chart-container-line {
   padding-top: 20px;
   position: relative;
   margin: auto;
   height: 40vh;
   width: 20vw;
-}
-
-#doughnutChart {
-  overflow: hidden;
 }
 
 #referrerTable .card-body .table {
