@@ -199,14 +199,6 @@ a:focus {
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
-#dashboard .col-width-l {
-  width: 75vw;
-}
-
-#dashboard .col-width-s {
-  width: 20vw;
-}
-
 #dashboard .row {
   padding-bottom: 35px;
 }
@@ -319,19 +311,27 @@ a:focus {
 /* ==================================================
     CHARTS AND TABLES
  =====================================================*/
-#statistics .card-body .chart-container {
+#statistics .card-body .chart-container-line {
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 100%;
-  /* overflow: hidden; */
+  height: 35vh;
+  width: 20vw;
 }
 
 #lineChart {
-    
+  overflow: hidden;
+}
+
+#salesDist .card-body .chart-container-line {
+  padding-top: 20px;
+  position: relative;
+  margin: auto;
+  height: 40vh;
+  width: 20vw;
 }
 
 #doughnutChart {
+  overflow: hidden;
 }
 
 #referrerTable .card-body .table {

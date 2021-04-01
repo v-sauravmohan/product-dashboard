@@ -119,7 +119,7 @@
         <!--Cards-->
         <div id="cards" class="row">
           <!--Statistics Section-->
-          <div class="col col-width-l">
+          <div class="col-9">
             <div class="row">
               <!--Statistics Card-->
               <div id="statistics" class="col">
@@ -138,16 +138,23 @@
                         </div>
                       </div>
                     </div>
-                    <canvas id="lineChart" height="350" width="450"></canvas>
+                    <div class="chart-container-line">
+                      <canvas id="lineChart"></canvas>
+                    </div>
                   </div>
                 </div>
               </div>
               <!--Sales Distribution Card-->
-              <div class="col">
+              <div id="salesDist" class="col">
                 <div class="card card-size-m">
                   <div class="card-body">
                     <h5 class="card-title">Sales Distribution</h5>
-                    <canvas id="doughnutChart" height="370" width="450"></canvas>
+                    <!-- <div class="container">
+                      <div id="doughnutChart"></div>
+                    </div> -->
+                    <div class="chart-container-line">
+                      <canvas id="doughnutChart"></canvas>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -215,7 +222,7 @@
             </div>
           </div>
           <!--Profile Section-->
-          <div class="col-md-auto col-width-s">
+          <div class="col-3">
             <!--Profile & Our Users Card-->
             <div id="profile" class="row">
               <div class="card card-size-l">
@@ -237,7 +244,7 @@
                   </div>
                   <div class="header d-flex flex-row justify-content-between">
                     <h5 class="card-title">Our Users</h5>
-                    <i class="fa fa-ellipsis-h"></i> 
+                    <i class="fa fa-ellipsis-h"></i>
                   </div>
                   <div class="user-group">
                     <div class="d-flex flex-column">
@@ -282,9 +289,11 @@
                 <div class="card-body">
                   <div class="header d-flex flex-row justify-content-between">
                     <h5 class="card-title">Product Video</h5>
-                    <i class="fa fa-ellipsis-h"></i> 
+                    <i class="fa fa-ellipsis-h"></i>
                   </div>
-                  <iframe class="video-player" src="https://www.youtube.com/embed/Oy6hk6Y7VHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe class="video-player" src="https://www.youtube.com/embed/Oy6hk6Y7VHQ" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -309,7 +318,7 @@
 
   <!--Custom Code-->
   <script type="text/javascript" src="./index.js">
-    
+
   </script>
 </body>
 

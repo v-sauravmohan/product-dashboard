@@ -35,7 +35,7 @@ var lineChartOne = new Chart(linectx, {
         ]
     },
     options: {
-        responsive: false,
+        maintainAspectRatio: false,
         legend: {
             position: 'bottom',
         },
@@ -86,7 +86,7 @@ var doughnutChart = new Chart(doughnutctx, {
         ]
     },
     options: {
-        responsive: false,
+        maintainAspectRatio: false,
         legend: {
             position: 'bottom',
             align: 'center'
