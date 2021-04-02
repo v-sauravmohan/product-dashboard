@@ -201,10 +201,14 @@ a:focus {
 }
 
 #dashboard .row {
-  padding-bottom: 35px;
+  padding-bottom: 25px;
 }
 
-#dashboard #cards .col {
+#dashboard #cards #salesDist.card-padding {
+  padding-right: 25px;
+}
+
+#dashboard #cards #referrerTable .card-padding {
   padding-right: 25px;
 }
 
@@ -347,6 +351,19 @@ a:focus {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (max-width: 1300px) and (min-width: 769px) {
+  #salesDist {
+    margin-top: 25px;
+  }
+
+  #dashboard #cards #salesDist.card-padding {
+    padding-right: 15px;
+  }
+
+  #dashboard #cards #referrerTable .card-padding {
+    padding-right: 15px;
+  }
+}
 
 @media (max-width: 768px) {
   #sidebar {
